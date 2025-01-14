@@ -1,5 +1,5 @@
 # Working Directory
-DATA_DIR<-"C:/Users/Rober/OneDrive/Dokumente/Daten-Orchestrierung/Diederichs/data"
+DATA_DIR <- "C:/path/to/your/data/directory"
 setwd(DATA_DIR)
 getwd()
 
@@ -350,11 +350,11 @@ for (i in c(1:length(corona_corpus))) {
 #4 Zusammenfuehrung und Begutachtung der Ergebnisse
 daten_gesamt <- d_germanfakenc %>% rbind(d_corona)
 
-#als .rds-Datei speichern
-saveRDS(daten_gesamt, "~/Daten-Orchestrierung/Diederichs/data/rds_files/verstaendlichkeitsanalyse_fake_und_true_komplett.rds")
+# Als .rds-Datei speichern
+saveRDS(daten_gesamt, "~/path/to/your/data/rds_files/verstaendlichkeitsanalyse_fake_und_true_komplett.rds")
 
-#gespeicherte .rds-Datei aufrufen
-daten_gesamt <- readRDS("~/Daten-Orchestrierung/Diederichs/data/verstndlichkeitsanalyse_fake_und_true_komplett.rds")
+# Gespeicherte .rds-Datei aufrufen
+daten_gesamt <- readRDS("~/path/to/your/data/verstaendlichkeitsanalyse_fake_und_true_komplett.rds")
 
 #als Excel-Datei in WD speichern
 write_xlsx(daten_gesamt, "analyse_komplett.xlsx")
