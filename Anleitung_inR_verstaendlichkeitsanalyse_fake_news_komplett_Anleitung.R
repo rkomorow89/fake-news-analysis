@@ -10,14 +10,14 @@ library(qdapRegex) # Bereinigungsfunktionen
 library(stringi) # Textmanipulation
 
 # WD: Hier sind alle meine Dateien
-setwd("~/Schreibtisch/Claudi Test R/PolKomm")
+setwd("~/path/to/your/project/directory")
 
 #####################################
 # Zusatzdateien: Zwingend notwendig #
 #####################################
 
 # udpipe-Sprachmodell
-udmodel <- "~/Schreibtisch/Claudi Test R/PolKomm/german-ud-2.0-170801.udpipe" 
+udmodel <- "~/path/to/your/model/german-ud-2.0-170801.udpipe"
 
 ########################################
 # Zusatzdateien und Pakete: Alternativ #
@@ -29,7 +29,7 @@ udmodel <- "~/Schreibtisch/Claudi Test R/PolKomm/german-ud-2.0-170801.udpipe"
 library(koRpus)
 library(koRpus.lang.de)
 
-LCC.de <- read.corp.LCC("~/R/Run/Diss_Claudi/deu_news_2015_1M.tar.gz")
+LCC.de <- read.corp.LCC("~/path/to/your/corpus/corpus_file.tar.gz")
 
 # Korpora findet man hier: https://wortschatz.uni-leipzig.de/de/download/German
 # Es dient als Referenzpunkt um zu schauen, wie häufig die Wörter eines Textes im Vergleich in der deutschen Sprache vorkommen (= gemessen daran, wie häufig das Wort in einer Textsammlung vorkommt).
@@ -377,7 +377,7 @@ for (i in c(1:length(corona_corpus))) {
 
 daten_gesamt <- d_germanfakenc %>% rbind(d_corona) %>% rename(anteil_hk_bis_8_satz1 = n_wortzahl_satz1.1)
 
-saveRDS(daten_gesamt, "~/Schreibtisch/Claudi Test R/PolKomm/verständlichkeitsanalyse_fake_und_true_komplett.rds")
+saveRDS(daten_gesamt, "~/path/to/your/output/verständlichkeitsanalyse_fake_und_true_komplett.rds")
 
 spick <-
   daten_gesamt %>% 
